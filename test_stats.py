@@ -1,4 +1,4 @@
-from stats import mean
+from stats import mean, std
 from nose.tools import assert_equal, assert_almost_equal
 
 def testMean():
@@ -30,6 +30,31 @@ def testInfMean():
     Checks the mean function to 3 places for a infinitely-repeating result
     *******************************************************************'''
     assert_almost_equal(mean([2,3,5]),3.333,places=3)
+
+def testStd1():
+    obs = std([0.0,2.0])
+    exp = 1.0
+    assert_equal(obs,exp)
+
+def testStd2():
+    obs = std([ ])
+    exp = 0.0
+    assert_equal(obs,exp)
+    
+def testStd3():
+    obs = std([0.0,4.0])
+    exp = 2.0
+    assert_equal(obs,exp)  
+
+def testStd4():
+    obs = std([1.0,3.0])
+    exp = 1.0
+    assert_equal(obs,exp) 
+    
+def testStd5():
+    obs = std([1.0,1.0,1.0])
+    exp = 0.0
+    assert_equal(obs,exp)   
 
 ''' # Run tests for the mean function
 testMean()
