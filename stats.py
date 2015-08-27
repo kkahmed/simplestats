@@ -1,4 +1,8 @@
+"""
+Statistics class for SWC workshop
 
+@author: Kazi
+"""
 
 
 def mean(vals):
