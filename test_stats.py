@@ -1,10 +1,11 @@
 from stats import mean
+from nose.tools import assert_equal
 
 def testMean():
     '''*******************************************************************
     Checks the mean function using integers with integer result expected
     *******************************************************************'''
-    assert(mean([2,4]) == 3)
+    assert_equal(mean([2,4]),3)
 
 def testFloatMean():
     '''*******************************************************************
@@ -16,7 +17,7 @@ def testNegMean():
     '''*******************************************************************
     Checks the mean function using integers with negative result expected
     *******************************************************************'''
-    assert(mean([-4,2]) == -2)
+    assert(mean([-4,2]) == -1)
 
 def testVaryMean():
     '''*******************************************************************
@@ -24,8 +25,8 @@ def testVaryMean():
     *******************************************************************'''
     assert(mean([2,4,6,8]) == mean([1,3,7,9]))
 
-# Run tests for the mean function
+''' # Run tests for the mean function
 testMean()
 testFloatMean()
 testNegMean()
-testVaryMean()
+testVaryMean() '''
